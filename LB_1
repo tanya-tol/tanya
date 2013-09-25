@@ -1,0 +1,131 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct Gruppa
+{
+	char nazv_gr[50];
+	int chislo_st;
+	float sr_ball;
+	int kurs;
+	Gruppa *prev;
+public:
+	void Uznat_sr_ball();
+	void Uznat_chislo_st();
+	void Vernut_gruppu();
+};
+struct Institut
+{
+	char nazv_institut[80];
+	char adres[100];
+};
+class Phakultet
+{
+	char nazv_institut[80];
+	char poln_nazv[90];
+	char kratk_nazv[20];
+	Institut *inst;
+public:
+	void Uznat_ph_i_inst();
+	void Uznat_sr_ball();
+	void Add_grup();
+	void Delete_grup(Gruppa *temp);
+	void Uznat_prinadlezhnost_ph();
+	void Vernut_gruppu();
+};
+void Phakultet::Uznat_ph_i_inst()//узнать полное и краткое название факультета и его институт
+{
+	cout << "Введите полное и краткое название факультета и институт, к которому он относится: ";
+	cin >> poln_nazv >> kratk_nazv >> nazv_institut;
+
+	
+}
+void Phakultet::Uznat_prinadlezhnost_ph()//узнать, относится ли он к данному институту
+{
+	//int k;//количество факультетов
+	string inst = ("КН КИУ ПММ РТ ЕТ АКТ ТКВТ ФЗН ФПО ФНИГ");
+	int pos = inst.find(kratk_nazv);
+	cout << pos;
+	/*Phakultet *inst = new Phakultet [k];
+	for (int i = 0; i < k; ++i)
+	{
+		if (kratk_nazv == inst[i])
+		{
+		cout << "Ваш факультет относится к " << nazv_institut;
+		}
+		else cout << "Ваш факультет не относится к " << nazv_institut;
+	}*/
+}
+void Gruppa::Uznat_chislo_st()//узнать число студентов данной группы
+{
+	cout << "Ваша группа: ";
+	cin >> nazv_gr;
+	cout << "Число студентов: " ;
+	cin >> chislo_st;
+}
+void Gruppa::Uznat_sr_ball( )//узнать средний балл по всем группам с числом студентов выше заданного
+{
+	int n;
+	Gruppa *gr = new Gruppa[n];
+	cout << "Количество групп: ";
+	cin >> n;
+	for (int i = 0; i < n; ++i)
+	{
+		if (gr[i] > chislo_st)
+		{
+			cin >> sr_ball;
+		}
+	}
+
+}
+void Phakultet::Add_grup(Gruppa *temp)//добавить группу(начало первого курса)
+{
+	int c;
+	temp-> prev = c;
+	cout << "Gruppa dobavlena";
+}
+void Phakultet::Delete_grup(Gruppa *temp)//удалить группу(после диплома)
+{
+	try
+	{
+		if (temp.kurs == 5) throw ("Gruppa udalena");
+	}
+	catch(const char *kurs)//const char *temp.kurs
+	{
+	delete[] temp.kurs;
+	}
+}
+void Gruppa::Vernut_gruppu()//вернуть группу с наивысшим средним баллом
+{
+	Gruppa.Uznat_sr_ball();//как подключить один метод в другом без сбрасывания данных?
+	int n;
+	for (int i = 0; i < n; ++i)
+	{
+		if ( gr[i] > sr_ball)
+		{
+			sr_ball = gr[i];
+		}
+	}
+		return  sr_ball;
+}
+int main()
+{
+	//заполнить 
+
+
+
+
+
+
+	setlocale(LC_ALL, "");
+	cin >> temp.kurs;
+	Add_grup();
+
+	cin.get();
+	cin.get();
+	return 0;
+}
+
+
+=====
+
+Laba_1
